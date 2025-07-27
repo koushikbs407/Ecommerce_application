@@ -1,5 +1,6 @@
+require('dotenv').config();
 const express = require('express');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY || 'your_stripe_secret_key_here');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { Product } = require('../Model/Product');
 const path = require('path');
 
@@ -9,7 +10,7 @@ router.use(express.static('view'));
 router.use(express.json());
 router.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 
-const BASE_URL = 'http://localhost:3000'; // Set base URL manually
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3000'; // Set base URL manually
 
 router.get('/', (req, res) => {
     res.render('index.ejs');
