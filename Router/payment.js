@@ -1,5 +1,5 @@
 const express = require('express');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY || 'sk_test_51R4FRkJMUVr8nOlnrKHOW2H9x73d4nDMgf7Jwnsprx1mSCaWPGPK7LyFJhl8pWJoIHQ4HrSvjnHz9YNfgaLRKbSb00X0HQgqKH');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY || 'your_stripe_secret_key_here');
 const { Product } = require('../Model/Product');
 const path = require('path');
 
